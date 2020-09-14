@@ -17,23 +17,23 @@ The project has 3 parts:
 * Frontend: flask, plotly
 
 ## File Descriptions
-\
-README.md
-ETL Pipeline Preparation.ipynb - guidance on running the ETL pipeline
-ML Pipeline Preparation.ipynb - guidance on running the ML pipeline including a grid search section
-\app
-run.py - for running the web app
-\templates
-go.html
-master.html
-\data
-DisasterResponse.db
-disaster_categories.csv
-disaster_messages.csv
-process_data.py
-\models
-classifier.pkl : pikle file for the trained model
-
+- \
+	- README.md
+ - ETL Pipeline Preparation.ipynb - guidance on running the ETL pipeline
+ - ML Pipeline Preparation.ipynb - guidance on running the ML pipeline including a grid search section
+- \app
+ - run.py - for running the web app
+ - \templates
+    - go.html
+    - master.html
+- \data
+   - DisasterResponse.db
+   - disaster_categories.csv
+   - disaster_messages.csv
+   - process_data.py
+- \models
+   - classifier.pkl : pikle file for the trained model
+   - train_classifier.py
 ## Launch application
  1. Run the following commands in the project's root directory to set up your database and model.
 
@@ -46,3 +46,6 @@ classifier.pkl : pikle file for the trained model
      `python run.py`
 
  3. Go to http://0.0.0.0:3001/
+
+## License
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
