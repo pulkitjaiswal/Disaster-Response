@@ -16,6 +16,23 @@ The project has 3 parts:
 * Database handling: SQLalchemy, pickle
 * Frontend: flask, plotly
 
+## File Descriptions
+\
+README.md
+ETL Pipeline Preparation.ipynb - guidance on running the ETL pipeline
+ML Pipeline Preparation.ipynb - guidance on running the ML pipeline including a grid search section
+\app
+run.py - for running the web app
+\templates
+go.html
+master.html
+\data
+DisasterResponse.db
+disaster_categories.csv
+disaster_messages.csv
+process_data.py
+\models
+classifier.pkl : pikle file for the trained model
 
 ## Launch application
  1. Run the following commands in the project's root directory to set up your database and model.
