@@ -1,4 +1,4 @@
-# Pipeline for Disaster Response Application
+# Disaster Response Application
 
 ## Description
 The objective of this project is to create a pragmatic application that leverages natural language processing to categorize raw tweets and messages in order to generate an effective triage strategy for disaster response. A dataset is provided us courtesy of Figure Eight. 
