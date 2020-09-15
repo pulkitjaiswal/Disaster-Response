@@ -137,24 +137,22 @@ def build_pipeline():
     Build Pipeline function
     
     Output:
-        A Scikit ML Pipeline that process text messages and apply a classifier.
+        Return Grid Search model with pipeline and Classifier.
         
     """
+    moc = MultiOutputClassifier(RandomForestClassifier())
+
     pipeline = Pipeline([
-        ('features', FeatureUnion([
+        ('vect', CountVectorizer(tokenizer=tokenize)),
+        ('tfidf', TfidfTransformer()),
+        ('clf', moc)
+        ])
 
-            ('text_pipeline', Pipeline([
-                ('count_vectorizer', CountVectorizer(tokenizer=tokenize)),
-                ('tfidf_transformer', TfidfTransformer())
-            ])),
+    parameters = {'clf__estimator__max_depth': [10, 50, None],
+              'clf__estimator__min_samples_leaf':[2, 5, 10]}
 
-            ('starting_verb_transformer', StartingVerbExtractor())
-        ])),
-
-        ('classifier', MultiOutputClassifier(AdaBoostClassifier()))
-    ])
-
-    return pipeline
+    cv = GridSearchCV(pipeline, parameters)
+    return cv
 
 def multioutput_fscore(y_true,y_pred,beta=1):
     """
